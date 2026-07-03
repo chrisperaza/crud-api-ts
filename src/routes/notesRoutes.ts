@@ -27,4 +27,18 @@ router.post('/', (req, res) => {
   res.json(newNote);
 });
 
+/*** edit note ***/
+router.put('/:id', (req, res) => {
+  const noteId = Number(req.params.id);
+  const updatedFields = req.body;
+
+  const updatedNote = notesController.updateNote(noteId, updatedFields);
+
+  if (updatedNote) {
+    res.json(updatedNote);
+  } else {
+    res.sendStatus(404);
+  }
+});
+
 export default router;

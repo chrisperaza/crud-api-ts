@@ -9,3 +9,5 @@ export interface NotesEntry {
 }
 
 export type NewNoteEntry = Omit<NotesEntry, 'id'>;
+
+export type UpdateNoteEntry = Partial<NewNoteEntry>;
