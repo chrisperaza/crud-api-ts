@@ -1,10 +1,10 @@
 import express from 'express';
 const router = express.Router();
-import * as notesRoutes from '../controllers/notesController';
+import * as notesController from '../controllers/notesController';
 
 /*** get all notes ***/
 router.get('/', (_req, res) => {
-  res.send(Buffer.from(JSON.stringify(notesRoutes.getAllNotes())));
+  res.status(200).json(notesController.getAllNotes());
 });
 
 //router.post('/', (_req, res) => {
