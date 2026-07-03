@@ -2,21 +2,21 @@
   {
     "id": 1,
     "date": "2022-01-04",
-    "type": "family",
+    "category": "family",
     "title": "Mom's birthday",
     "content": "Make a cake, buy gift, plan surprise with sister."
   },
   {
     "id": 2,
     "date": "2024-03-07",
-    "type": "church",
+    "category": "church",
     "title": "Church meeting",
     "content": "Visit brother Soares after meeting."
   },
   {
     "id": 3,
     "date": "2025-05-10",
-    "type": "personal",
+    "category": "personal",
     "title": "Don't forget!",
     "content": "Buy cookies for night party."
   }
