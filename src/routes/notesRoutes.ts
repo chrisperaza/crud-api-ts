@@ -4,11 +4,13 @@ import * as notesController from '../controllers/notesController';
 
 /*** get all notes ***/
 router.get('/', (_req, res) => {
-  res.status(200).json(notesController.getAllNotes());
+  res.send(notesController.getAllNotes());
 });
 
-//router.post('/', (_req, res) => {
-//  res.send('Saving a note...');
-//});
+/*** get a single note by id ***/
+router.get('/:id', (req, res) => {
+  const noteResult = notesController.getSingleNoteById(Number(req.params.id));
+  return noteResult != null ? res.send(noteResult) : res.sendStatus(404);
+});
 
 export default router;
