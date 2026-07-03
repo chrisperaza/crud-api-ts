@@ -52,3 +52,18 @@ export const updateNote = (
 
   return notes[noteIndex];
 };
+
+/****************************/
+/*** DELETE NOTE ***/
+/****************************/
+export const deleteNote = (id: number): boolean => {
+  const noteIndex = notes.findIndex((n) => n.id == id);
+
+  if (noteIndex == -1) {
+    return false;
+  }
+
+  notes.splice(noteIndex, 1);
+
+  return true;
+};

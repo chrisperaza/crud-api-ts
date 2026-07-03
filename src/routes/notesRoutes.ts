@@ -41,4 +41,17 @@ router.put('/:id', (req, res) => {
   }
 });
 
+/*** delete note ***/
+router.delete('/:id', (req, res) => {
+  const noteId = Number(req.params.id);
+
+  const deletedNote = notesController.deleteNote(noteId);
+
+  if (deletedNote) {
+    res.sendStatus(204);
+  } else {
+    res.sendStatus(404);
+  }
+});
+
 export default router;
