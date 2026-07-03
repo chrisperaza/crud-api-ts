@@ -7,3 +7,5 @@ export interface NotesEntry {
   title: string;
   content: string;
 }
+
+export type NewNoteEntry = Omit<NotesEntry, 'id'>;

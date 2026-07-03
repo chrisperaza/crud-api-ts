@@ -1,4 +1,4 @@
-import { NotesEntry } from '../types';
+import { NewNoteEntry, NotesEntry } from '../types';
 import notesData from './notesData.json';
 
 const notes: Array<NotesEntry> = notesData as Array<NotesEntry>;
@@ -19,4 +19,13 @@ export const getSingleNoteById = (id: number): NotesEntry | undefined => {
 /****************************/
 /*** CREATE NOTE ***/
 /****************************/
-export const createNote = () => null;
+export const createNote = (newNoteEntry: NewNoteEntry): NotesEntry => {
+  const newNote = {
+    id: notes.length + 1,
+    ...newNoteEntry,
+  };
+
+  notes.push(newNote);
+
+  return newNote;
+};
